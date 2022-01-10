@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 const Perfil = () => {
 
   const [dados, setDados] = useState([])
+  const [loading, setLoading] = useState(false)
   
   useEffect(() => {
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InFlTTg5azFvU203VUN6MVRvQzBCIiwibmFtZSI6IkRlc2F0aW5hciIsImVtYWlsIjoicm9kcmlnb3NkbkBnbWFpbC5jb20iLCJjcGYiOiIxMTEuMTExLjExMS0xMCIsImhhc0FkZHJlc3MiOmZhbHNlLCJpYXQiOjE2NDE4MzM5MTR9.50QgjPIpVYMTxgZUryROVoGI2bSXtE52qnXrmSJO-So'
@@ -19,8 +20,15 @@ const Perfil = () => {
       }
     }).then((res) => {
       setDados(res.data.user)
+      setLoading(false)
     })
   }, [])
+
+  if (loading) {
+    return <div>
+      Carregando
+    </div>
+  } else {
 
   return (
     <ContainerEditarPerfil className='Perfil'>
@@ -30,14 +38,17 @@ const Perfil = () => {
         </div>
       </div>
       <p>
-        Nome: {dados.name}
+        Nome: 
+        {dados.name}
         <button>editar</button>
       </p>
       <p>
-        Email: {dados.email}
+        Email: 
+        {dados.email}
       </p>
       <p>
-        CPF: {dados.cpf}
+        CPF: 
+        {dados.cpf}
       </p>
       <div className='Rectangle'>
         <p>
@@ -68,7 +79,7 @@ const Perfil = () => {
         </div>
       </div>
     </ContainerEditarPerfil>
-  );
+  )};
 }
 
 export default Perfil;

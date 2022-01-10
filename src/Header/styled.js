@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const TelaContainer = styled.div `
     width: 100%;
-    height: 640px;
-    padding: 0 0 184px;
+    /* height: 640px; */
+    padding: 0 0 30px;
     
     .LogoContainer{
         display:flex;
@@ -11,7 +11,7 @@ export const TelaContainer = styled.div `
         
         img{
             width: 104px;
-            height: 58px;
+            /* height: 58px; */
             margin: 68px 128px 16px;
             object-fit: contain;
         }

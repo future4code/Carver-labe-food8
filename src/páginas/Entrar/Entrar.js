@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App() {
+function Entrar() {
   return (
     <div>
-      FutureEats
+      Página de Entrar
     </div>
   );
 }
 
-export default App;
+export default Entrar;

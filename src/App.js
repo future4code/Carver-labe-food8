@@ -1,11 +1,13 @@
 import React from 'react';
-import { Header } from './Header/Header';
 import Entrar from './páginas/Entrar/Entrar';
+import { Router } from './routes/router';
+
 
 const App = () => {
-  return(
+  return (
     <div>
       <Entrar/>
+      <Router />
     </div>
   )
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Header } from './Header/Header';
+import { Router } from './routes/router';
 
 const App = () => {
-  return(
+  return (
     <div>
-      <Header/>
+      <Router />
     </div>
   )
 }

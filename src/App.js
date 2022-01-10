@@ -1,11 +1,11 @@
 import React from 'react';
+import { Header } from './Header/Header';
 
-function App() {
-  return (
+const App = () => {
+  return(
     <div>
-      FutureEats
+      <Header/>
     </div>
-  );
+  )
 }
-
-export default App;
+export default App

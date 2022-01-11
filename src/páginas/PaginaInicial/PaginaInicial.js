@@ -1,29 +1,26 @@
 import React from 'react';
-import axios from 'axios';
 import { BASE_URL } from '../../constantes/urls';
+import useRequestData from '../../hooks/useRequestData';
+// import { usePaginaProtegida } from '../../hooks/usePaginaProtegida';
+import CardRestaurante from '../../componentes/CardRestaurantes/CardRestaurantes';
 
 
-// const listaRestaurantes = async () => {
 
-//   try {
-//     const response = await axios.get(`${BASE_URL}/restaurants`)
-
-//     setRestaurantes(response.data.results)
-//     console.log(restaurants)
-//   } catch(error) {
-//     alert(error.response.message)
-//     console.log(error)
-//   }
-// }
-
-
-const listaRestaurantes = () => {
+const PaginaInicial = () => {
+  // usePaginaProtegida()
   const restaurantes = useRequestData([], `${BASE_URL}/restaurants`)
   console.log(restaurantes)
+
+const cardRestaurante = restaurantes.map((restaurants)=> {
+  return <p>{restaurants.name}</p>
+})
+
   return (
-    <div>
+    <CardRestaurante>
       <h1>Página Inicial</h1>
-    </div>
+      <p>Restaurante</p>
+      {cardRestaurante}
+    </CardRestaurante>
   );
 }
 

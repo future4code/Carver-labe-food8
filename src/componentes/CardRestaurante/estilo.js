@@ -22,17 +22,6 @@ export const CardDetalhes = styled.div`
   padding-bottom: 0;
 `;
 
-export const RetanguloCard = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 328px;
-  height: 112px;
-  margin: 7px 0 0;
-  border-radius: 8px;
-  border: solid 1px #b8b8b8;
-`
-
 export const ImgProduto = styled.img`
   width: 96px;
   height: 112px;
@@ -41,7 +30,7 @@ export const ImgProduto = styled.img`
 `
 export const Detalhes = styled.div`
   height: 110%;
-  width: 65%;
+  width: 40%;
 `
 
 export const NomeDoItem = styled.span`
@@ -75,7 +64,7 @@ export const TextDescritivo = styled.span`
 export const Preco = styled.span`
   width: 118px;
   height: 19px;
-  margin: 4px 8px 15px 10px;
+  margin: 35px 8px 15px 10px;
   font-family: Roboto;
   font-size: 16px;
   font-weight: normal;
@@ -90,9 +79,9 @@ export const BotaoAdd = styled.button`
   color:#5cb646;
   font-size: 10px;
   background-color: white;
-  width: 22%;
+  width: 30%;
   height: 35%;
-  align-self:flex-end;
+  align-self: flex-end;
   margin-bottom: 0;
   border-top-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
@@ -102,7 +91,7 @@ export const BotaoRem = styled.button`
   color:#e02020;
   font-size: 10px;
   background-color: white;
-  width: 22%;
+  width: 30%;
   height: 35%;
   align-self:flex-end;
   border-top-left-radius: 0.5em;

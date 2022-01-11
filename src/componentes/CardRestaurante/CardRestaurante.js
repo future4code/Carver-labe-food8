@@ -1,5 +1,5 @@
 import React from "react";
-import { BotaoAdd, BotaoRem, CardDetalhes, ContainerCard, Detalhes, ImgProduto, NomeDoItem, Preco, RetanguloCard, TextDescritivo } from "./estilo";
+import { BotaoAdd, BotaoRem, CardDetalhes, ContainerCard, Detalhes, ImgProduto, NomeDoItem, Preco, TextDescritivo } from "./estilo";
 
 const CardRestaurante = (props) => {
 
@@ -23,7 +23,6 @@ const CardRestaurante = (props) => {
     return (
         <div>
             <CardDetalhes>
-                <RetanguloCard>
                     <ImgProduto src={props.detalhe.photoUrl} />
                     <Detalhes>
                         <ContainerCard>
@@ -36,9 +35,8 @@ const CardRestaurante = (props) => {
                         <ContainerCard>
                             <Preco>R${props.detalhe.price.toFixed(2)}</Preco>
                         </ContainerCard>
-                        {mudaBotao()}
                     </Detalhes>
-                </RetanguloCard>
+                    {mudaBotao()}
             </CardDetalhes>
         </div >
     )

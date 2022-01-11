@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import {ContextoGlobal} from './EstadoGlobalContexto';
 
-export default EstadoGlobal = (props) => {
+const EstadoGlobal = (props) => {
 // Todos os estados e setters são declarados aqui:
 const [carrinho, setCarrinho] = useState([])
 
@@ -24,3 +24,4 @@ return(
     </ContextoGlobal.Provider>
 )
 }
+export default EstadoGlobal

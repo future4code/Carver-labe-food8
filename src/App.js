@@ -6,7 +6,6 @@ import { Router } from './routes/router';
 const App = () => {
   return (
     <div>
-      <Entrar/>
       <Router />
     </div>
   )

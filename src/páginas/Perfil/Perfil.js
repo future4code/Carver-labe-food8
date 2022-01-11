@@ -4,15 +4,20 @@ import { BASE_URL } from '../../constantes/urls'
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { irParaEditarPerfil } from '../../routes/cordinator';
 
 
 const Perfil = () => {
-
+  
+  const history = useHistory()
   const [dados, setDados] = useState([])
   const [loading, setLoading] = useState(false)
-  
+   
   useEffect(() => {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InFlTTg5azFvU203VUN6MVRvQzBCIiwibmFtZSI6IkRlc2F0aW5hciIsImVtYWlsIjoicm9kcmlnb3NkbkBnbWFpbC5jb20iLCJjcGYiOiIxMTEuMTExLjExMS0xMCIsImhhc0FkZHJlc3MiOmZhbHNlLCJpYXQiOjE2NDE4MzM5MTR9.50QgjPIpVYMTxgZUryROVoGI2bSXtE52qnXrmSJO-So'
+    setLoading(true)
+
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InFlTTg5azFvU203VUN6MVRvQzBCIiwibmFtZSI6IkRlc2F0aW5hciIsImVtYWlsIjoicm9kcmlnb3NkbkBnbWFpbC5jb20iLCJjcGYiOiIxMTEuMTExLjExMS0xMCIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBBZm9uc28gQnJheiwgMTc3LCA3MSAtIFZpbGEgTi4gQ29uY2Vpw6fDo28iLCJpYXQiOjE2NDE5MTE1NjN9.0BRQ27nIkizNT-vUwiiiw0Focg9DQo64FvgFHoYOADM'
 
     axios.get(`${BASE_URL}/profile`, {
       headers: {
@@ -40,7 +45,9 @@ const Perfil = () => {
       <p>
         Nome: 
         {dados.name}
-        <button>editar</button>
+        <button onClick={() => irParaEditarPerfil(history)}>
+          editar
+          </button>
       </p>
       <p>
         Email: 
@@ -56,7 +63,8 @@ const Perfil = () => {
           <button>editar</button>
         </p>
         <p>
-          Endereço: 
+          Endereço:
+          {dados.address}
         </p>
       </div>
       <div>

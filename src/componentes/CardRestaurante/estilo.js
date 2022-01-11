@@ -1,6 +1,31 @@
 import styled from "styled-components";
 
+export const ContainerCard = styled.div`
+  display: flex;
+  height: 20%;
+  width: 101%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0;
+  margin-bottom: 0;
+`
+
+export const CardDetalhes = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 328px;
+  height: 112px;
+  margin: 7px 0 0;
+  border-radius: 8px;
+  border: solid 1px #00000025;
+  padding-bottom: 0;
+`;
+
 export const RetanguloCard = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 328px;
   height: 112px;
   margin: 7px 0 0;
@@ -14,10 +39,14 @@ export const ImgProduto = styled.img`
   margin: 0 16px 0 0;
   object-fit: contain;
 `
+export const Detalhes = styled.div`
+  height: 110%;
+  width: 65%;
+`
 
 export const NomeDoItem = styled.span`
-  width: 167px;
-  height: 18px;
+  width: 200px;
+  height: 20px;
   margin: 5px 0px 0px 10px;
   font-family: Roboto;
   font-size: 16px;
@@ -61,8 +90,8 @@ export const BotaoAdd = styled.button`
   color:#5cb646;
   font-size: 10px;
   background-color: white;
-  width: 35%;
-  height: 70%;
+  width: 22%;
+  height: 35%;
   align-self:flex-end;
   margin-bottom: 0;
   border-top-left-radius: 0.5em;
@@ -73,8 +102,8 @@ export const BotaoRem = styled.button`
   color:#e02020;
   font-size: 10px;
   background-color: white;
-  width: 35%;
-  height: 70%;
+  width: 22%;
+  height: 35%;
   align-self:flex-end;
   border-top-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;

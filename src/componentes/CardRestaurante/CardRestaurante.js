@@ -1,18 +1,46 @@
 import React from "react";
-import { Botao, BotaoAdd, BotaoRem, ImgProduto, NomeDoItem, Preco, RetanguloCard, TextDescritivo } from "./estilo";
+import { BotaoAdd, BotaoRem, CardDetalhes, ContainerCard, Detalhes, ImgProduto, NomeDoItem, Preco, RetanguloCard, TextDescritivo } from "./estilo";
 
 const CardRestaurante = (props) => {
+
+
+    const mudaBotao = () => {
+        
+        if (true) {
+          return (
+            <BotaoAdd>
+              ADICIONAR
+            </BotaoAdd>
+          );
+        } else {
+          return (
+            <BotaoRem>
+              REMOVER
+            </BotaoRem>
+          );
+        }
+    }
     return (
-        <RetanguloCard>
-            <ImgProduto src={props.detalhe.photoUrl} />
-            <NomeDoItem>{props.detalhe.name}</NomeDoItem>
-            <TextDescritivo>{props.detalhe.description}</TextDescritivo>
-            <Preco>{props.detalhe.price.toFixed(2)}</Preco>
+        <div>
+            <CardDetalhes>
+                <RetanguloCard>
+                    <ImgProduto src={props.detalhe.photoUrl} />
+                    <Detalhes>
+                        <ContainerCard>
+                            <NomeDoItem>{props.detalhe.name}</NomeDoItem>
+                        </ContainerCard>
+                        <ContainerCard>
+                            <TextDescritivo>{props.detalhe.description}</TextDescritivo>
+                        </ContainerCard>
 
-            <BotaoAdd>ADICIONAR</BotaoAdd>
-            <BotaoRem>REMOVER</BotaoRem>
-
-        </RetanguloCard>
+                        <ContainerCard>
+                            <Preco>R${props.detalhe.price.toFixed(2)}</Preco>
+                        </ContainerCard>
+                        {mudaBotao()}
+                    </Detalhes>
+                </RetanguloCard>
+            </CardDetalhes>
+        </div >
     )
 }
 

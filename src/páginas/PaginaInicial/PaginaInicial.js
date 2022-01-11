@@ -11,11 +11,11 @@ const PaginaInicial = () => {
   const restaurantes = useRequestData([], `${BASE_URL}/restaurants`)
   console.log(restaurantes)
 
-const cardRestaurante = () => restaurantes.map((restaurants)=> {
+const cardRestaurante = () => restaurantes.map((restaurantes)=> {
   return ( 
     <CardRestaurante
-      title={restaurants.name}
-      image={restaurants.logoUrl}
+      title={restaurantes.name}
+      image={restaurantes.logoUrl}
       onClick={()=> null}
   />
     )

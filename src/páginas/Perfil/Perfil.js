@@ -1,39 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ContainerEditarPerfil } from './estilo';
-import { BASE_URL } from '../../constantes/urls'
-import axios from 'axios';
-import { useState } from 'react';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { irParaEditarPerfil } from '../../routes/cordinator';
+import { ContextoGlobal } from '../../EstadoGlobal/EstadoGlobalContexto';
 
 
 const Perfil = () => {
-  
   const history = useHistory()
-  const [dados, setDados] = useState([])
-  const [loading, setLoading] = useState(false)
-   
+  const { states, setters, requests } = useContext(ContextoGlobal)
+
   useEffect(() => {
-    setLoading(true)
+    requests.pegarPerfil()
 
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InFlTTg5azFvU203VUN6MVRvQzBCIiwibmFtZSI6IkRlc2F0aW5hciIsImVtYWlsIjoicm9kcmlnb3NkbkBnbWFpbC5jb20iLCJjcGYiOiIxMTEuMTExLjExMS0xMCIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBBZm9uc28gQnJheiwgMTc3LCA3MSAtIFZpbGEgTi4gQ29uY2Vpw6fDo28iLCJpYXQiOjE2NDE5MTE1NjN9.0BRQ27nIkizNT-vUwiiiw0Focg9DQo64FvgFHoYOADM'
-
-    axios.get(`${BASE_URL}/profile`, {
-      headers: {
-        auth: token
-      }
-    }).then((res) => {
-      setDados(res.data.user)
-      setLoading(false)
-    })
-  }, [])
-
-  if (loading) {
-    return <div>
-      Carregando
-    </div>
-  } else {
+  }, [requests])
 
   return (
     <ContainerEditarPerfil className='Perfil'>
@@ -43,19 +23,19 @@ const Perfil = () => {
         </div>
       </div>
       <p>
-        Nome: 
-        {dados.name}
+        Nome:
+        {states.dadosPerfil.name}
         <button onClick={() => irParaEditarPerfil(history)}>
           editar
-          </button>
+        </button>
       </p>
       <p>
-        Email: 
-        {dados.email}
+        Email:
+        {states.dadosPerfil.email}
       </p>
       <p>
-        CPF: 
-        {dados.cpf}
+        CPF:
+        {states.dadosPerfil.cpf}
       </p>
       <div className='Rectangle'>
         <p>
@@ -64,7 +44,7 @@ const Perfil = () => {
         </p>
         <p>
           Endereço:
-          {dados.address}
+          {states.dadosPerfil.address}
         </p>
       </div>
       <div>
@@ -87,7 +67,7 @@ const Perfil = () => {
         </div>
       </div>
     </ContainerEditarPerfil>
-  )};
-}
+  )
+};
 
 export default Perfil;

@@ -13,7 +13,7 @@ import React from 'react';
 export const Router = () => {
     return (
         <BrowserRouter>
-            <Header />
+            {/* <Header /> */}
             <Switch>
                 <Route exact path={'/'} >
                     <PaginaInicial />

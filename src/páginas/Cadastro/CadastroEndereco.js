@@ -88,3 +88,5 @@ export const CadastroEndereco = () => {
     </div>
   )
 }
+
+export default CadastroEndereco

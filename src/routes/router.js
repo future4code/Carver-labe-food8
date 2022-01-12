@@ -10,6 +10,7 @@ import PaginaDeErro from '../páginas/PaginaDeErro/PaginaDeErro';
 import CadastroEndereco from '../páginas/Cadastro/CadastroEndereco'
 import { Header } from '../Header/Header';
 import React from 'react';
+import EditarEndereco from '../páginas/EditarPerfil/EditarEndereco';
 
 export const Router = () => {
     return (
@@ -36,6 +37,9 @@ export const Router = () => {
                 </Route>
                 <Route exact path={'/editarperfil'}>
                     <EditarPerfil />
+                </Route>
+                <Route exact path={'/editarendereco'}>
+                    <EditarEndereco/>
                 </Route>
                 <Route exact path={`/restaurante/:id`}>
                     <Restaurantes />

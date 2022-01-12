@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TelaContainer = styled.div `
     width: 100%;
-    /* height: 640px; */
+    height: 230px;
     padding: 0 0 30px;
     
     .LogoContainer{

@@ -39,7 +39,7 @@ export const Entrar = () => {
       <h1>Entrar</h1>
         <InputRetangulo>
           <form onSubmit={pegarDados}>
-
+          <span>Email*
           <input 
             placeholder={"E-mail"}
             name={"email"}
@@ -48,6 +48,8 @@ export const Entrar = () => {
             required
             type="email"
           />
+          </span>
+          <span> Senha*
           <input 
             placeholder={"Senha"}
             name={"password"}
@@ -56,6 +58,7 @@ export const Entrar = () => {
             type="password"
             required
           />
+          </span>
           <ButtonLogin>
             <button>Entrar</button>
           </ButtonLogin>

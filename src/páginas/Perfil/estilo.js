@@ -5,8 +5,10 @@ export const Container = styled.div`
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  width: 360px;
-  height: 640px;
+  min-width: 100vw;
+  min-height: 100vh;
+  /* width: 360px; */
+  /* height: 640px; */
 
  .header{
     display: flex;
@@ -47,7 +49,7 @@ export const Container = styled.div`
  .endereco{
     min-width: 335px;
     height: 76px;
-    padding: 10px;
+    padding: 12px;
     background-color: #eeeeee;
 
     .endereco-cadastrado{

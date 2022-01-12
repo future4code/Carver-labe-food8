@@ -14,7 +14,7 @@ const useRequestData = (initialData, url) => {
             
         })
         .then((response) => {
-            SetData(response.data)
+            SetData(response.data.restaurants)
         })
         .catch((error) => {
             console.log(error)

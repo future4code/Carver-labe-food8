@@ -25,6 +25,11 @@ export const irParaPerfil = (history) => {
 export const irParaEditarPerfil = (history) => {
     history.push('/editarperfil')
 }
+
+export const irParaEditarEndereco = (history) =>{
+    history.push('/editarendereco')
+}
+
 export const irParaRestaurante = (history, id) => {
     history.push(`/restaurante/${id}`)
 }

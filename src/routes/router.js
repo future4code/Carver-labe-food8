@@ -7,6 +7,7 @@ import Perfil from '../páginas/Perfil/Perfil';
 import EditarPerfil from '../páginas/EditarPerfil/EditarPerfil';
 import Restaurantes from '../páginas/Restaurantes/Restaurantes';
 import PaginaDeErro from '../páginas/PaginaDeErro/PaginaDeErro';
+import CadastroEndereco from '../páginas/Cadastro/CadastroEndereco'
 import { Header } from '../Header/Header';
 import React from 'react';
 
@@ -23,6 +24,9 @@ export const Router = () => {
                 </Route>
                 <Route exact path={'/cadastro'}>
                     <Cadastro />
+                </Route>
+                <Route exact path={'/cadastroendereco'}>
+                    <CadastroEndereco />
                 </Route>
                 <Route exact path={'/carrinho'}>
                     <Carrinho />

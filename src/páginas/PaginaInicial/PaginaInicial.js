@@ -2,31 +2,41 @@ import React from 'react';
 import { BASE_URL } from '../../constantes/urls';
 import useRequestData from '../../hooks/useRequestData';
 // import { usePaginaProtegida } from '../../hooks/usePaginaProtegida';
-import CardRestaurante from '../../componentes/CardRestaurantes/CardRestaurantes';
-
-
+import CardRestaurantes from '../../componentes/CardRestaurantes/CardRestaurantes'
+// import Header from '../../Header/Header';
+import { ContainerPaginaInicial } from './estilo';
+import { useHistory } from 'react-router-dom';
+import { irParaRestaurante } from '../../routes/cordinator';
 
 const PaginaInicial = () => {
   // usePaginaProtegida()
   const restaurantes = useRequestData([], `${BASE_URL}/restaurants`)
-  console.log(restaurantes)
+  const history = useHistory()
 
-const cardRestaurante = () => restaurantes.map((restaurantes)=> {
-  return ( 
-    <CardRestaurante
-      title={restaurantes.name}
-      image={restaurantes.logoUrl}
-      onClick={()=> null}
-  />
+  const onClickCard = (id) => {
+    irParaRestaurante(history, id)
+  }
+
+  const cardsRestaurante = restaurantes.map((restaurant) => {
+    return (
+
+      <CardRestaurantes
+        key={restaurant.id}
+        titulo={restaurant.name}
+        imagem={restaurant.logoUrl}
+        frete={restaurant.shipping}
+        tempoEntrega={restaurant.deliveryTime}
+        onClick={() => onClickCard(restaurant.id)}
+      />
     )
-})
+  })
 
   return (
-    <CardRestaurante>
-      <h1>Página Inicial</h1>
-      <p>Restaurante</p>
-      {cardRestaurante}
-    </CardRestaurante>
+    <ContainerPaginaInicial>
+    <div>
+      {cardsRestaurante}
+    </div>
+    </ContainerPaginaInicial>
   );
 }
 

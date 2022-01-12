@@ -1,3 +1,56 @@
+<h1 align="center">Future Eats</h1>
+
+<hr/>
+Seja bem vinda (o)! 
+<hr/>
+Nome dos integrantes: 
+- Camila Santos Ferreira
+- Thamires Lippelt Vieira
+- Thayna Saad Isquierdo Jorge 
+- Rodrigo Santos do Nascimento
+- Ruana Piber da Rosa
+<hr/>
+
+### Descrição do Projeto
+
+<p align="center">
+  Esse projeto foi desvolvido usando a API da Labenu - Labefood, como referência e tem o objetivo de aplicar 
+  os conteúdos visto até a semana 13 no curso da Labenu.
+  O Proeto reproduz uma versão do app UberEats, foi utilizado um modelo de layout oferecido pelo curso. 
+  É possível se cadastrar e ao fazer o login, visualizar uma lista
+  de resaurantes e ao selecionar um restaurente você pode ver suas informações e produtos, 
+  bem como adicionar ou remover um produto ao carrinho. Tembém pode acessar seu 
+  carrinho, editar dados, etc... 
+</p>
+
+<hr/>
+<h2>Você pode ver ele funcionando por aqui: <h3>
+<hr/>
+  
+### Features
+-[] Página de Login
+-[] Página de cadastro
+-[] Lista de Restaurantes
+-[] Cardápio do Restaurante
+-[] Editar Perfil
+-[] Adicionar ou Remover produtos  
+-[] Carrinho
+  
+
+  ### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [React](https://pt-br.reactjs.org/)
+  
+ ### 🛠 Libs
+- Styled-Components
+- Axios
+- React-router-DOM
+  
+ ### Imagens do Projeto
+	
+<hr/>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -12,10 +65,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 

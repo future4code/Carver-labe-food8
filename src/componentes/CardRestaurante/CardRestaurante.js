@@ -2,7 +2,7 @@ import React from "react";
 import { BotaoAdd, BotaoRem, CardDetalhes, ContainerCard, Detalhes, ImgProduto, NomeDoItem, Preco, TextDescritivo } from "./estilo";
 
 const CardRestaurante = (props) => {
-
+    
 
     const mudaBotao = () => {
         

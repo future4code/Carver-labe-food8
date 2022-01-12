@@ -10,6 +10,10 @@ export const irParaCadastro = (history) => {
     history.push('/cadastro')
 }
 
+export const irParaCadastroEndereco = (history) => {
+    history.push('/cadastroendereco')
+}
+
 export const irParaCarrinho = (history) => {
     history.push('/carrinho')
 }

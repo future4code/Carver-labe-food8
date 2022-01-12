@@ -4,20 +4,32 @@ import { ContainerPai , InputRetangulo, ButtonLogin} from './estilo';
 import useForm from "../../hooks/useForm"
 import axios from 'axios';
 import { BASE_URL } from '../../constantes/urls';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { irParaCadastro, irParaCadastroEndereco, irParaInicio } from '../../routes/cordinator';
 
 export const Entrar = () => {
   const [form, onChange, clear] = useForm  ({email: "", password: ""})
+  const history = useHistory()
 
   const pegarDados = (event) => {
     event.preventDefault()
-    console.log(form)
     fazerLogin(form)
   }
+
+  console.log(localStorage.getItem('endereco'), "console")
 
   const fazerLogin = (body) => {
     axios.post (`${BASE_URL}/login`, body) 
     .then((resposta) => {
-      console.log(resposta)
+      localStorage.setItem('endereco', resposta.data.user.hasAddress)
+      localStorage.setItem('token', resposta.data.token)
+      console.log(localStorage.getItem('token'), "isso é o token")
+      if(resposta.data.user.hasAddress === true){
+        localStorage.setItem('token', resposta.data.token)
+        irParaInicio(history)
+      } else {
+        irParaCadastroEndereco(history)
+      }
     })
   }
 
@@ -29,7 +41,6 @@ export const Entrar = () => {
           <form onSubmit={pegarDados}>
 
           <input 
-
             placeholder={"E-mail"}
             name={"email"}
             value={form.email}
@@ -42,8 +53,8 @@ export const Entrar = () => {
             name={"password"}
             value={form.password}
             onChange={onChange}
+            type="password"
             required
-            type="senha"
           />
           <ButtonLogin>
             <button>Entrar</button>
@@ -51,7 +62,7 @@ export const Entrar = () => {
           </form>
         </InputRetangulo>
         
-      <p>Não possui cadastro? Clique aqui.</p>
+      <button onClick={() => irParaCadastro(history)}>Não possui cadastro? Clique aqui.</button>
     </ContainerPai>
   );
 }

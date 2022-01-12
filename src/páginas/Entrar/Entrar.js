@@ -22,7 +22,8 @@ export const Entrar = () => {
     axios.post (`${BASE_URL}/login`, body) 
     .then((resposta) => {
       localStorage.setItem('endereco', resposta.data.user.hasAddress)
-
+      localStorage.setItem('token', resposta.data.token)
+      console.log(localStorage.getItem('token'), "isso é o token")
       if(resposta.data.user.hasAddress === true){
         localStorage.setItem('token', resposta.data.token)
         irParaInicio(history)

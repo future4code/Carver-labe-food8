@@ -13,7 +13,6 @@ export const CadastroEndereco = () => {
     e.preventDefault()
     cadastrarEndereco(form)
   }
-  
 
   const cadastrarEndereco = (body) => {
     axios.put(`${BASE_URL}/address`, body, {
@@ -21,8 +20,9 @@ export const CadastroEndereco = () => {
         auth: localStorage.getItem('token')
       }
     }).then((res) => {
-      localStorage.setItem(res.data.token, 'token')
+      localStorage.setItem('token', res.data.token)
       alert("Cadastro efetuado com Sucesso!")
+      irParaInicio(history)
     }).catch((err) =>{
       alert(err.response)
     })

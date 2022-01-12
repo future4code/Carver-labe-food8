@@ -13,7 +13,7 @@ const EstadoGlobal = (props) => {
 
     const pegarPerfil = () => {
         setLoading(true)
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InFlTTg5azFvU203VUN6MVRvQzBCIiwibmFtZSI6IkRlc2F0aW5hciIsImVtYWlsIjoicm9kcmlnb3NkbkBnbWFpbC5jb20iLCJjcGYiOiIxMTEuMTExLjExMS0xMCIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBBZm9uc28gQnJheiwgMTc3LCA3MSAtIFZpbGEgTi4gQ29uY2Vpw6fDo28iLCJpYXQiOjE2NDE5MTE1NjN9.0BRQ27nIkizNT-vUwiiiw0Focg9DQo64FvgFHoYOADM'
+        const token = localStorage.getItem('token')
 
         axios.get(`${BASE_URL}/profile`, {
             headers: {
@@ -26,7 +26,7 @@ const EstadoGlobal = (props) => {
     }
 
     const editarPerfil = (body) => {
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InFlTTg5azFvU203VUN6MVRvQzBCIiwibmFtZSI6IkRlc2F0aW5hciIsImVtYWlsIjoicm9kcmlnb3NkbkBnbWFpbC5jb20iLCJjcGYiOiIxMTEuMTExLjExMS0xMCIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBBZm9uc28gQnJheiwgMTc3LCA3MSAtIFZpbGEgTi4gQ29uY2Vpw6fDo28iLCJpYXQiOjE2NDE5MTE1NjN9.0BRQ27nIkizNT-vUwiiiw0Focg9DQo64FvgFHoYOADM'
+        const token = localStorage.getItem('token')
 
         axios.put(`${BASE_URL}/profile`, body, {
             headers: {

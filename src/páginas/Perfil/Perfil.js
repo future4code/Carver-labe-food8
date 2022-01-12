@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { ContainerEditarPerfil } from './estilo';
+import { Container, ContainerPerfil, EstiloGlobal, Header } from './estilo';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { irParaCarrinho, irParaEditarEndereco, irParaEditarPerfil, irParaInicio, irParaPerfil } from '../../routes/cordinator';
 import { ContextoGlobal } from '../../EstadoGlobal/EstadoGlobalContexto';
 import axios from 'axios';
 import { BASE_URL } from '../../constantes/urls';
-
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 
 const Perfil = () => {
   const history = useHistory()
@@ -36,84 +36,81 @@ const Perfil = () => {
   const arrayTeste2 = []
 
   console.log(arrayTeste2.length ? "sim" : "não", "teste")
-  console.log(arrayTeste.length ? "sim" : "não" , "teste array com coisa")
+  console.log(arrayTeste.length ? "sim" : "não", "teste array com coisa")
 
   const mapHistoricoPedidos = historicoPedidos.map((item) => {
-      return (
-        <div>
-          <p>
-            Loja
-          </p>
-          <p>
-            Data
-          </p>
-          <p>
-            Valor
-          </p>
-        </div>
-      )
+    return (
+      <div>
+        <p>
+          Loja
+        </p>
+        <p>
+          Data
+        </p>
+        <p>
+          Valor
+        </p>
+      </div>
+    )
   })
 
-  console.log(historicoPedidos, "historico pedidos")
+  // console.log(historicoPedidos, "historico pedidos")
   return (
-    <ContainerEditarPerfil className='Perfil'>
-      <div className='Bar'>
-        <div className='Title'>
+
+    <Container>
+      <ContainerPerfil>
+        <div className='header'>
           Meu Perfil
         </div>
-      </div>
-      <p>
-        Nome:
-        {states.dadosPerfil.name}
-        <button onClick={() => irParaEditarPerfil(history)}>
-          editar
-        </button>
-      </p>
-      <p>
-        Email:
-        {states.dadosPerfil.email}
-      </p>
-      <p>
-        CPF:
-        {states.dadosPerfil.cpf}
-      </p>
-      <div className='Rectangle'>
-        <p>
-          Endereço Cadastrado
-          <button onClick={() => irParaEditarEndereco(history)}>editar</button>
-        </p>
-        <p>
-          Endereço:
-          {states.dadosPerfil.address}
-        </p>
-      </div>
-      <div>
-        Histórico de pedidos
-        <div className='pedidos_card'>
-          <div className='Card_Historico'>
-            {/* <button onClick={visualizarHistoricoPedidos}>
+        <div className='dados'>
+          <p className='nome'>
+            {states.dadosPerfil.name}
+            <EditOutlinedIcon fontSize='small' style={{ color: "black" }} onClick={() => irParaEditarPerfil(history)} />
+          </p>
+          <p className='email'>
+            {states.dadosPerfil.email}
+          </p>
+          <p className='cpf'>
+            {states.dadosPerfil.cpf}
+          </p>
+        </div>
+        <div className='endereco'>
+          <p className='endereco-cadastrado'>
+            Endereço cadastrado
+            <EditOutlinedIcon fontSize='small' style={{ color: "black" }} onClick={() => irParaEditarEndereco(history)} />
+          </p>
+          <p className='endereco-usuario'>
+            {states.dadosPerfil.address}
+          </p>
+        </div>
+        <div className='historico'>
+          <p className='historico-titulo'>
+            Histórico de pedidos
+          </p>
+          <p className='sublinhado'>
+          </p>
+
+          <div className='pedidos_card'>
+            <div className='Card_Historico'>
+              {/* <button onClick={visualizarHistoricoPedidos}>
               teste histórico
             </button> */}
-            {historicoPedidos.length === 0 ? <div>array vazio</div> : <div>array com coisa</div>}
-
-            {/* <p>
-              Loja
-            </p>
-            <p>
-              Data
-            </p>
-            <p>
-              Valor
-            </p> */}
+              {historicoPedidos.length === 0 ? <div>array vazio</div> : <div>array com coisa</div>}
+            </div>
+          </div>
+          <div className='Footer'>
+            <button onClick={() => irParaInicio(history)}>Início</button>
+            <button onClick={() => irParaCarrinho(history)}>Carrinho</button>
+            <button onClick={() => irParaPerfil(history)}>Perfil</button>
           </div>
         </div>
-        <div className='Footer'>
-          <button onClick={() => irParaInicio(history)}>Início</button>
-          <button onClick={() => irParaCarrinho(history)}>Carrinho</button>
-          <button onClick={() => irParaPerfil(history)}>Perfil</button>
-        </div>
-      </div>
-    </ContainerEditarPerfil>
+      </ContainerPerfil>
+    </Container>
+
+
+
+
+
   )
 };
 

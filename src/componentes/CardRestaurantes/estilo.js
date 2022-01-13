@@ -6,7 +6,7 @@ height: 196px;
 margin: 50px 0 0;
 padding: 8px 16px 0;
 border-radius: 8px;
-border: solid 1px #b8b8b8
+border: solid 1px #b8b8b8;
 `
 export const ContainerImagem = styled.img`
 width: 328px;

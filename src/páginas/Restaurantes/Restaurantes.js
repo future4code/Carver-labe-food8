@@ -32,9 +32,6 @@ const Restaurante = () => {
       });
   }, []);
 
-  const addCarrinho = () => {
-    //função de adicionar ao carrinho
-  }
 
   const detalhesDoRestaurante = () => {
     const dadoProdutosOrdenado = dadoProdutos.sort((a, b) => {

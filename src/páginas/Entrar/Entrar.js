@@ -16,20 +16,19 @@ export const Entrar = () => {
     fazerLogin(form)
   }
 
-  console.log(localStorage.getItem('endereco'), "console")
-
   const fazerLogin = (body) => {
     axios.post (`${BASE_URL}/login`, body) 
     .then((resposta) => {
       localStorage.setItem('endereco', resposta.data.user.hasAddress)
       localStorage.setItem('token', resposta.data.token)
-      console.log(localStorage.getItem('token'), "isso é o token")
       if(resposta.data.user.hasAddress === true){
         localStorage.setItem('token', resposta.data.token)
         irParaInicio(history)
       } else {
         irParaCadastroEndereco(history)
       }
+    }).catch((err) => {
+      alert(err.response.data.message)
     })
   }
 

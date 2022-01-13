@@ -30,7 +30,7 @@ export const CadastroEndereco = () => {
       alert("Cadastro efetuado com Sucesso!")
       irParaInicio(history)
     }).catch((err) => {
-      alert(err.response)
+      alert(err.response.data.message)
     })
   }
 
@@ -118,9 +118,10 @@ export const CadastroEndereco = () => {
           <Button
             fullWidth
             variant={"contained"}
+            type='submit'
           >
-          
-          Salvar </Button>
+          Salvar 
+          </Button>
         </form>
       </InputContainer>
     </ContainerForm>

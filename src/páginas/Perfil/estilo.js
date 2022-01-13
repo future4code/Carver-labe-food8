@@ -86,11 +86,12 @@ align-items: center;
 export const FooterPerfil = styled.div`
 display: flex;
 justify-content: space-around;
-position:absolute;
+position: absolute;
 bottom: 0;
 width: 360px;
 height: 49px;
 box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.2), 0 -2px 1px -1px rgba(0, 0, 0, 0.12), 0 -1px 1px 0 rgba(0, 0, 0, 0.14);
+z-index: 1;
 background-color: #fff;
 
 button{

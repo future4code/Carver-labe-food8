@@ -23,6 +23,8 @@ export const Cadastro = () => {
       .then((res) => {
         localStorage.setItem('token', res.data.token)
         irParaCadastroEndereco(history)
+      }).catch((err) => {
+        alert(err.response.data.message)
       })
 
   }
@@ -90,10 +92,9 @@ export const Cadastro = () => {
           <Button
             fullWidth
             variant={"contained"}
-          >
-          
+            type='submit'
+          > 
           Criar</Button>
-
         </form>
       </InputContainer>
     </ContainerForm>

@@ -28,6 +28,8 @@ const EstadoGlobal = (props) => {
         }).then((res) => {
             setDadosPerfil(res.data.user)
               setLoading(false)
+        }).catch((err) =>{
+            alert(err.response.data.message)
         })
     }
 
@@ -40,6 +42,8 @@ const EstadoGlobal = (props) => {
             }
         }).then((res) => {
             alert("dados alterados")
+        }).catch((err) =>{
+            alert(err.response.data.message)
         })
     }
 

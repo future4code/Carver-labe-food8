@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Container, ContainerPerfil, FooterPerfil, Header } from './estilo';
+import { Container, ContainerPerfil, FooterPerfil, HistoricoVazio } from './estilo';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { irParaCarrinho, irParaEditarEndereco, irParaEditarPerfil, irParaInicio, irParaPerfil } from '../../routes/cordinator';
@@ -99,16 +99,19 @@ const Perfil = () => {
               {/* <button onClick={visualizarHistoricoPedidos}>
               teste histórico
             </button> */}
-              {historicoPedidos.length === 0 ? <div>array vazio</div> : <div>array com coisa</div>}
+              {historicoPedidos.length === 0 ?
+                <HistoricoVazio>Você não realizou nenhum pedido</HistoricoVazio>
+                :
+                <div>array com coisa</div>}
             </div>
           </div>
           <div className='Footer'>
           </div>
         </div>
         <FooterPerfil>
-          <button onClick={() => irParaInicio(history)}><img src={homepage}/></button>
-          <button onClick={() => irParaCarrinho(history)}><img src={carrinho}/></button>
-          <button onClick={() => irParaPerfil(history)}><img src={perfil}/></button>
+          <button onClick={() => irParaInicio(history)}><img src={homepage} /></button>
+          <button onClick={() => irParaCarrinho(history)}><img src={carrinho} /></button>
+          <button onClick={() => irParaPerfil(history)}><img src={perfil} /></button>
         </FooterPerfil>
       </ContainerPerfil>
     </Container>

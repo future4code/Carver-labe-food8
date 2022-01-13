@@ -12,7 +12,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 360px;
     height: 64px;
     margin: 0 0 16px;
     -webkit-backdrop-filter: blur(10px);
@@ -23,12 +23,13 @@ export const Container = styled.div`
 
  .dados{
    height: 102px;
-   width: 328px;
+   width: 360px;
+   padding: 12px;
 
    .nome{
       width: 328px;
       height: 18px;
-      margin: 0 0 16px 0;
+      margin: 0 0 10px 0;
       letter-spacing: -0.39px;
       display: flex;
       justify-content: space-between;
@@ -36,16 +37,16 @@ export const Container = styled.div`
 
    .email{
       letter-spacing: -0.39px;
-      margin: 2px 0 0 0;
+      /* margin: 2px 0 0 0; */
    }
    .cpf{
       letter-spacing: -0.39px;
-      margin: 16px 0 0 0;
+      /* margin: 16px 0 0 0; */
    }
  }
 
  .endereco{
-    min-width: 335px;
+    min-width: 360px;
     height: 76px;
     padding: 12px;
     background-color: #eeeeee;
@@ -63,13 +64,13 @@ export const Container = styled.div`
  }
 
  .historico{
-    width: 328px;
+    width: 360px;
     height: 18px;
     letter-spacing: -0.39px;
     margin-bottom: -2px;
 
   .sublinhado{
-    width: 328px;
+    width: 360px;
     margin: -2px 0 7px;
     border: solid 1px black;
   }
@@ -96,4 +97,12 @@ button{
   background-color: transparent;
   border: none;
 }
+`
+
+export const HistoricoVazio = styled.div`
+display: flex;
+justify-content: center;
+margin-top: 20px;
+
+
 `

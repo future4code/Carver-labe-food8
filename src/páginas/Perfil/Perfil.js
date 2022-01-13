@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Container, ContainerPerfil, EstiloGlobal, Header } from './estilo';
+import { Container, ContainerPerfil, FooterPerfil, Header } from './estilo';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { irParaCarrinho, irParaEditarEndereco, irParaEditarPerfil, irParaInicio, irParaPerfil } from '../../routes/cordinator';
@@ -7,6 +7,10 @@ import { ContextoGlobal } from '../../EstadoGlobal/EstadoGlobalContexto';
 import axios from 'axios';
 import { BASE_URL } from '../../constantes/urls';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+import perfil from '../../recursos/imagens/perfilVerde.png'
+import homepage from '../../recursos/imagens/homePageCinza.png'
+import carrinho from '../../recursos/imagens/carrinhoCinza.png'
+
 
 const Perfil = () => {
   const history = useHistory()
@@ -99,11 +103,13 @@ const Perfil = () => {
             </div>
           </div>
           <div className='Footer'>
-            <button onClick={() => irParaInicio(history)}>Início</button>
-            <button onClick={() => irParaCarrinho(history)}>Carrinho</button>
-            <button onClick={() => irParaPerfil(history)}>Perfil</button>
           </div>
         </div>
+        <FooterPerfil>
+          <button onClick={() => irParaInicio(history)}><img src={homepage}/></button>
+          <button onClick={() => irParaCarrinho(history)}><img src={carrinho}/></button>
+          <button onClick={() => irParaPerfil(history)}><img src={perfil}/></button>
+        </FooterPerfil>
       </ContainerPerfil>
     </Container>
 

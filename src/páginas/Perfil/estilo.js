@@ -5,16 +5,14 @@ export const Container = styled.div`
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  min-width: 100vw;
-  min-height: 100vh;
-  /* width: 360px; */
-  /* height: 640px; */
+  width: 100vw;
+  height: 100vh;
 
  .header{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 360px;
+    width: 100%;
     height: 64px;
     margin: 0 0 16px;
     -webkit-backdrop-filter: blur(10px);
@@ -79,8 +77,23 @@ export const Container = styled.div`
 
 `
 export const ContainerPerfil = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+display: flex;
+flex-direction: column;
+align-items: center;
 
+`
+export const FooterPerfil = styled.div`
+display: flex;
+justify-content: space-around;
+position:absolute;
+bottom:0;
+width:100%;
+height: 49px;
+box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.2), 0 -2px 1px -1px rgba(0, 0, 0, 0.12), 0 -1px 1px 0 rgba(0, 0, 0, 0.14);
+background-color: #fff;
+
+button{
+  background-color: transparent;
+  border: none;
+}
 `

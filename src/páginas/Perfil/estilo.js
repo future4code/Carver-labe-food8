@@ -27,7 +27,7 @@ export const Container = styled.div`
    padding: 12px;
 
    .nome{
-      width: 328px;
+      width: 360px;
       height: 18px;
       margin: 0 0 10px 0;
       letter-spacing: -0.39px;
@@ -87,8 +87,8 @@ export const FooterPerfil = styled.div`
 display: flex;
 justify-content: space-around;
 position:absolute;
-bottom:0;
-width:100%;
+bottom: 0;
+width: 360px;
 height: 49px;
 box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.2), 0 -2px 1px -1px rgba(0, 0, 0, 0.12), 0 -1px 1px 0 rgba(0, 0, 0, 0.14);
 background-color: #fff;

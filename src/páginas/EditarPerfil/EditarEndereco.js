@@ -106,7 +106,7 @@ export const EditarEndereco = () => {
             label={'Estado'}
             variant={"outlined"}
             fullWidth
-            helperText='Siglas do Estado. Exemplo: PE'
+            helperText='Sigla do Estado. Exemplo: PE'
             margin='normal'
           />
           <Button

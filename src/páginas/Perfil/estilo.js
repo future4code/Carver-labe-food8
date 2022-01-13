@@ -86,7 +86,7 @@ align-items: center;
 export const FooterPerfil = styled.div`
 display: flex;
 justify-content: space-around;
-position: absolute;
+position: fixed;
 bottom: 0;
 width: 360px;
 height: 49px;

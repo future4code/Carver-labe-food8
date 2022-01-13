@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './estilo';
 import { Bar, Rectangle, Endereco, Rua } from './estilo';
+import { ContextoGlobal } from '../../EstadoGlobal/EstadoGlobalContexto';
+import { CardPedido } from './CardPedido';
+import { CardSemPedido } from './cardSemPedido';
 
-
-function Carrinho() {
+const Carrinho = () => {
+  const { states, setters, requests } = useContext(ContextoGlobal)
   return (
     <div>
       <Bar>
         <div><span>Meu Carrinho</span></div>
-        
+
       </Bar>
-      <Rectangle>
-        <Endereco>Endereço de entrega</Endereco>
-        <Rua>Rua Blablabla, XX</Rua>
-      </Rectangle>
-      <div>
-        <p>Carrinho vazio</p>
-      </div>
+      <>
+        {states.pedidoAtivo !== null ?
+          <CardPedido/> : <CardSemPedido/>}
+      </>
+
     </div>
   );
 }

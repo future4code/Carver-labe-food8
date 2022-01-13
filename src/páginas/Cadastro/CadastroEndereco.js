@@ -4,6 +4,12 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { BASE_URL } from "../../constantes/urls";
 import useForm from "../../hooks/useForm";
 import { irParaInicio } from "../../routes/cordinator";
+import { TextField } from '@material-ui/core'
+import Button from '@material-ui/core/Button'
+import { ButtonNav, ContainerForm, InputContainer } from "./estilo";
+import { Header } from "../../Header/Header";
+
+
 
 export const CadastroEndereco = () => {
   const history = useHistory()
@@ -23,69 +29,102 @@ export const CadastroEndereco = () => {
       localStorage.setItem('token', res.data.token)
       alert("Cadastro efetuado com Sucesso!")
       irParaInicio(history)
-    }).catch((err) =>{
-      alert(err.response)
+    }).catch((err) => {
+      alert(err.response.data.message)
     })
   }
 
   return (
-    
-    <div>
-      <button onClick={() => irParaInicio(history)}>Ir para Home</button>
-      Meu endereço
-      <form onSubmit={enviarCadastroEndereco}>
-        <input
-        name='street'
-        placeholder='Logradouro'
-        onChange={onChange}
-        value={form.street}
-        type='text'
-        required
-        />
-        <input
-        name='number'
-        placeholder='Número'
-        onChange={onChange}
-        value={form.number}
-        type='number'
-        required
-        />
-        <input
-        name='complement'
-        placeholder='Complemento'
-        onChange={onChange}
-        value={form.complement}
-        type='text'
-        />
-        <input
-        name='neighbourhood'
-        placeholder='Bairro'
-        onChange={onChange}
-        value={form.neighbourhood}
-        type='text'
-        required
-        />
-        <input
-        name='city'
-        placeholder='Cidade'
-        onChange={onChange}
-        value={form.city}
-        type='text'
-        required
-        />
-        <input
-        name='state'
-        placeholder='Estado'
-        onChange={onChange}
-        value={form.state}
-        type='text'
-        required
-        title='Sigla do Estado. Exemplo: PE'
-        pattern='[A-Z]{2}'
-        />
-        <button>Salvar</button>
-      </form>
-    </div>
+    <ContainerForm>
+      <ButtonNav>
+        <button onClick={() => irParaInicio(history)}>Ir para Home</button>
+      </ButtonNav>
+      <InputContainer>
+        <h1>Meu endereço</h1>
+        <form onSubmit={enviarCadastroEndereco}>
+          <TextField
+            name='street'
+            placeholder='Logradouro'
+            onChange={onChange}
+            value={form.street}
+            type='text'
+            required
+            label={'Logradouro'}
+            variant={"outlined"}
+            fullWidth
+            margin='normal'
+          />
+          <TextField
+            name='number'
+            placeholder='Número'
+            onChange={onChange}
+            value={form.number}
+            type='number'
+            required
+            label={'Número'}
+            variant={"outlined"}
+            fullWidth
+            margin='normal'
+          />
+          <TextField
+            name='complement'
+            placeholder='Complemento'
+            onChange={onChange}
+            value={form.complement}
+            type='text'
+            label={'Complemento'}
+            variant={"outlined"}
+            fullWidth
+            margin='normal'
+          />
+          <TextField
+            name='neighbourhood'
+            placeholder='Bairro'
+            onChange={onChange}
+            value={form.neighbourhood}
+            type='text'
+            required
+            label={'Bairro'}
+            variant={"outlined"}
+            fullWidth
+            margin='normal'
+          />
+          <TextField
+            name='city'
+            placeholder='Cidade'
+            onChange={onChange}
+            value={form.city}
+            type='text'
+            required
+            label={'Cidade'}
+            variant={"outlined"}
+            fullWidth
+            margin='normal'
+          />
+          <TextField
+            name='state'
+            placeholder='Estado'
+            onChange={onChange}
+            value={form.state}
+            type='text'
+            required
+            title='Sigla do Estado. Exemplo: PE'
+            pattern='[A-Z]{2}'
+            label={'Estado'}
+            variant={"outlined"}
+            fullWidth
+            margin='normal'
+          />
+          <Button
+            fullWidth
+            variant={"contained"}
+            type='submit'
+          >
+          Salvar 
+          </Button>
+        </form>
+      </InputContainer>
+    </ContainerForm>
   )
 }
 

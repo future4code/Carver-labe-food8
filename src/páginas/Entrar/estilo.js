@@ -23,11 +23,11 @@ export const ContainerPai = styled.div `
 
 export const InputRetangulo = styled.div `
     width: 328px;
-    height: 56px;
+    height: 200px;
     margin: 8px 0 0;
     padding: 19px 48px 19px 16px;
     border-radius: 2px;
-    border:solid 1px #b8b8b8;
+    /* border:solid 1px #b8b8b8; */
     border-radius: 8px;
 
     span {
@@ -47,7 +47,7 @@ export const InputRetangulo = styled.div `
     
 
     input {
-        width: 264px;
+        width: 318px;
         height: 18px;
         font-family: Roboto;
         font-size: 16px;
@@ -57,10 +57,14 @@ export const InputRetangulo = styled.div `
         line-height: normal;
         letter-spacing: -0.50px;
         color: #d0d0d0;
+        margin: 10px;
+        padding: 5px;
     }
 `
 
 export const ButtonLogin = styled.div `
+    
+    
     button {
         margin: 10px;
         width: 328px;

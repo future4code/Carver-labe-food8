@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { usePaginaProtegida } from '../../hooks/usePaginaProtegida';
 import CardRestaurantes from '../../componentes/CardRestaurantes/CardRestaurantes'
-import { ContainerPaginaInicial, ContainerHeader, ConteudoHeader } from './estilo';
+import { ContainerPaginaInicial, ContainerHeader, ConteudoHeader, Navegacao } from './estilo';
 import { useHistory } from 'react-router-dom';
 import { irParaRestaurante } from '../../routes/cordinator';
 import { ContextoGlobal } from '../../EstadoGlobal/EstadoGlobalContexto';
 import { useState } from 'react';
+import Busca from '../../componentes/BuscaeFiltros/Busca';
 
 const PaginaInicial = () => {
   usePaginaProtegida()
@@ -61,39 +62,40 @@ const PaginaInicial = () => {
         <ContainerHeader>
           <ConteudoHeader>
             {/* uma tuia de botão que quando a gente clica ele muda o estado */}
-            <p>FutureEats</p>
-            <button onClick={() => setFiltro('')}>
-              Todos
-            </button>
-            <button onClick={() => setFiltro('Árabe')}>
-              Árabe
-            </button>
-            <button onClick={() => setFiltro('Asiática')}>
-              Asiática
-            </button>
-            <button onClick={() => setFiltro('Hamburguer')}>
-              Hamburguer
-            </button>
-            <button onClick={() => setFiltro('Italiana')}>
-              Italiana
-            </button>
-            <button onClick={() => setFiltro('Sorvetes')}>
-              Sorvetes
-            </button>
-            <button onClick={() => setFiltro('Carnes')}>
-              Carnes
-            </button>
-            <button onClick={() => setFiltro('Baiana')}>
-              Baiana
-            </button>
-            <button onClick={() => setFiltro('Petiscos')}>
-              Petiscos
-            </button>
-            <button onClick={() => setFiltro('Mexicana')}>
-              Mexicana
-            </button>
+            <div><p>FutureEats</p></div>
           </ConteudoHeader>
-        </ContainerHeader>
+        </ContainerHeader>   <Busca /> <Navegacao>
+          <button onClick={() => setFiltro('')}>
+            Todos
+          </button>
+          <button onClick={() => setFiltro('Árabe')}>
+            Árabe
+          </button>
+          <button onClick={() => setFiltro('Asiática')}>
+            Asiática
+          </button>
+          <button onClick={() => setFiltro('Hamburguer')}>
+            Hamburguer
+          </button>
+          <button onClick={() => setFiltro('Italiana')}>
+            Italiana
+          </button>
+          <button onClick={() => setFiltro('Sorvetes')}>
+            Sorvetes
+          </button>
+          <button onClick={() => setFiltro('Carnes')}>
+            Carnes
+          </button>
+          <button onClick={() => setFiltro('Baiana')}>
+            Baiana
+          </button>
+          <button onClick={() => setFiltro('Petiscos')}>
+            Petiscos
+          </button>
+          <button onClick={() => setFiltro('Mexicana')}>
+            Mexicana
+          </button>
+        </Navegacao>
         {/* comparacao pra mudar a tela de acordo com o item escolhido */}
         {
           filtro === '' ?

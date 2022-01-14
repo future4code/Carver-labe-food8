@@ -76,8 +76,9 @@ export const Formulario = styled.div`
   margin: 0px 16px;
   button{
     background-color: #5cb646;
-
+    text-transform: none;
   }
+  
   button:hover{
     background-color: #5cb646;
   }

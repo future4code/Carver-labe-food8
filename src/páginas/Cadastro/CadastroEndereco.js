@@ -3,11 +3,12 @@ import React from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { BASE_URL } from "../../constantes/urls";
 import useForm from "../../hooks/useForm";
-import { irParaInicio } from "../../routes/cordinator";
+import { irParaCadastro, irParaInicio } from "../../routes/cordinator";
 import { TextField } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
-import { ButtonNav, ContainerForm, InputContainer } from "./estilo";
+import { Formulario, ContainerForm } from "./estilo";
 import { Header } from "../../Header/Header";
+import voltar from '../../recursos/imagens/setaVoltarHeader.png'
 
 
 
@@ -35,16 +36,24 @@ export const CadastroEndereco = () => {
   }
 
   return (
+
     <ContainerForm>
-      <ButtonNav>
-        <button onClick={() => irParaInicio(history)}>Ir para Home</button>
-      </ButtonNav>
-      <InputContainer>
-        <h1>Meu endereço</h1>
+      <div className='header-editar'>
+        <button onClick={() => irParaCadastro(history)}>
+          <img src={voltar} />
+        </button>  
+        <p>
+          ****
+        </p>
+      </div>
+      <p>
+        Meu endereço
+      </p>
+      {/* Meu endereço */}
+      <Formulario>
         <form onSubmit={enviarCadastroEndereco}>
           <TextField
             name='street'
-            placeholder='Logradouro'
             onChange={onChange}
             value={form.street}
             type='text'
@@ -56,7 +65,6 @@ export const CadastroEndereco = () => {
           />
           <TextField
             name='number'
-            placeholder='Número'
             onChange={onChange}
             value={form.number}
             type='number'
@@ -68,7 +76,6 @@ export const CadastroEndereco = () => {
           />
           <TextField
             name='complement'
-            placeholder='Complemento'
             onChange={onChange}
             value={form.complement}
             type='text'
@@ -79,10 +86,8 @@ export const CadastroEndereco = () => {
           />
           <TextField
             name='neighbourhood'
-            placeholder='Bairro'
             onChange={onChange}
             value={form.neighbourhood}
-            type='text'
             required
             label={'Bairro'}
             variant={"outlined"}
@@ -91,10 +96,8 @@ export const CadastroEndereco = () => {
           />
           <TextField
             name='city'
-            placeholder='Cidade'
             onChange={onChange}
             value={form.city}
-            type='text'
             required
             label={'Cidade'}
             variant={"outlined"}
@@ -103,27 +106,25 @@ export const CadastroEndereco = () => {
           />
           <TextField
             name='state'
-            placeholder='Estado'
             onChange={onChange}
             value={form.state}
-            type='text'
             required
-            title='Sigla do Estado. Exemplo: PE'
-            pattern='[A-Z]{2}'
             label={'Estado'}
             variant={"outlined"}
             fullWidth
+            // helperText='Sigla do Estado. Exemplo: PE'
             margin='normal'
           />
           <Button
             fullWidth
-            variant={"contained"}
+            size='large'
             type='submit'
+            variant={"contained"}
           >
-          Salvar 
+            Salvar
           </Button>
         </form>
-      </InputContainer>
+      </Formulario>
     </ContainerForm>
   )
 }

@@ -1,13 +1,18 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { BASE_URL } from '../../constantes/urls';
 import { Header } from '../../Header/Header';
 import useForm from '../../hooks/useForm';
 import { irParaCadastroEndereco, irParaLogin } from '../../routes/cordinator';
-import { ContainerForm, ButtonNav, InputContainer } from './estilo';
+import { ContainerForm, Formulario, InputContainer } from './estilo';
 import { TextField } from '@material-ui/core'
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button'
+import voltar from '../../recursos/imagens/setaVoltarHeader.png'
 
 export const Cadastro = () => {
   const history = useHistory()
@@ -31,16 +36,22 @@ export const Cadastro = () => {
 
   return (
     <ContainerForm>
-      <ButtonNav>
-        <button onClick={() => irParaLogin(history)}>voltar</button>
-      </ButtonNav>
-      <Header />
-      <InputContainer>
-        <h1>Cadastrar</h1>
+      <div className='header-editar'>
+        <button onClick={() => irParaLogin(history)}>
+          <img src={voltar} />
+        </button>  
+        <p>
+          ****
+        </p>
+      </div>
+      <Header/>
+      <p>
+        Cadastrar
+      </p>
+      <Formulario>
         <form onSubmit={enviarCadastro}>
           <TextField
             name='name'
-            placeholder='Nome e Sobrenome'
             onChange={onChange}
             value={form.name}
             type='text'
@@ -52,7 +63,6 @@ export const Cadastro = () => {
           />
           <TextField
             name='email'
-            placeholder='E-mail'
             onChange={onChange}
             value={form.email}
             type='email'
@@ -64,39 +74,45 @@ export const Cadastro = () => {
           />
           <TextField
             name='cpf'
-            placeholder='CPF'
             onChange={onChange}
             value={form.cpf}
             type='text'
-            required
-            pattern='\d{3}\.\d{3}\.\d{3}-\d{2}'
-            title='CPF inválido. Exemplo de CPF válido: 123.456.789-11'
             label={'CPF'}
+            variant={"outlined"}
+            fullWidth
+            required
+            margin='normal'
+          />
+          <TextField
+            name='password'
+            onChange={onChange}
+            value={form.password}
+            required
+            label={'Senha'}
             variant={"outlined"}
             fullWidth
             margin='normal'
           />
           <TextField
-            name='password'
-            placeholder='Senha'
+            name='password2'
             onChange={onChange}
-            value={form.password}
-            type='password'
+            // value={}
             required
-            id='senha1'
-            label={'Senha'}
+            label={'Confirmar'}
             variant={"outlined"}
             fullWidth
             margin='normal'
           />
           <Button
             fullWidth
-            variant={"contained"}
+            size='large'
             type='submit'
-          > 
-          Criar</Button>
+            variant={"contained"}
+          >
+            Criar
+          </Button>
         </form>
-      </InputContainer>
+      </Formulario>
     </ContainerForm>
   );
 }

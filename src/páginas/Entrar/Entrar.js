@@ -35,6 +35,7 @@ export const Entrar = () => {
 
   return (
     <ContainerEntrar>
+      <div className='espaco-header'/>
       <Header />
       Entrar
       <Formulario>

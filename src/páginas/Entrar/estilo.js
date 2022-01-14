@@ -4,14 +4,18 @@ export const ContainerEntrar = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  /* padding-top: 80px; */
   width: 100%;
+  height: 640px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 
     button{
       margin-top: 20px;
       text-transform: none;
+    }
+    .espaco-header{
+        height: 64px;
     }
 `
 

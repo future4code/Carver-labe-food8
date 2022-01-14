@@ -35,74 +35,6 @@ export const Cadastro = () => {
   }
 
   return (
-    // <ContainerForm>
-    //   {/* <ButtonNav> */}
-    //     <button onClick={() => irParaLogin(history)}>voltar</button>
-    //   {/* </ButtonNav> */}
-    //   <Header />
-    //   {/* <InputContainer> */}
-    //     <h1>Cadastrar</h1>
-    //     <form onSubmit={enviarCadastro}>
-    //       <TextField
-    //         name='name'
-    //         placeholder='Nome e Sobrenome'
-    //         onChange={onChange}
-    //         value={form.name}
-    //         type='text'
-    //         required
-    //         label={'Nome'}
-    //         variant={"outlined"}
-    //         fullWidth
-    //         margin='normal'
-    //       />
-    //       <TextField
-    //         name='email'
-    //         placeholder='E-mail'
-    //         onChange={onChange}
-    //         value={form.email}
-    //         type='email'
-    //         required
-    //         label={'E-mail'}
-    //         variant={"outlined"}
-    //         fullWidth
-    //         margin='normal'
-    //       />
-    //       <TextField
-    //         name='cpf'
-    //         placeholder='CPF'
-    //         onChange={onChange}
-    //         value={form.cpf}
-    //         type='text'
-    //         required
-    //         pattern='\d{3}\.\d{3}\.\d{3}-\d{2}'
-    //         title='CPF inválido. Exemplo de CPF válido: 123.456.789-11'
-    //         label={'CPF'}
-    //         variant={"outlined"}
-    //         fullWidth
-    //         margin='normal'
-    //       />
-    //       <TextField
-    //         name='password'
-    //         placeholder='Senha'
-    //         onChange={onChange}
-    //         value={form.password}
-    //         type='password'
-    //         required
-    //         id='senha1'
-    //         label={'Senha'}
-    //         variant={"outlined"}
-    //         fullWidth
-    //         margin='normal'
-    //       />
-    //       <Button
-    //         fullWidth
-    //         variant={"contained"}
-    //         type='submit'
-    //       > 
-    //       Criar</Button>
-    //     </form>
-    //   {/* </InputContainer> */}
-    // </ContainerForm>
     <ContainerForm>
       <div className='header-editar'>
         <button onClick={() => irParaLogin(history)}>
@@ -116,7 +48,6 @@ export const Cadastro = () => {
       <p>
         Cadastrar
       </p>
-      {/* Meu endereço */}
       <Formulario>
         <form onSubmit={enviarCadastro}>
           <TextField

@@ -35,43 +35,45 @@ export const Entrar = () => {
 
   return (
     <ContainerEntrar>
-      <div className='espaco-header'/>
+      <div className='espaco-header' />
       <Header />
-      Entrar
+      <p>
+        Entrar
+      </p>
       <Formulario>
-      <form onSubmit={pegarDados}>
-        <TextField
-          label={'E-mail'}
-          name={"email"}
-          value={form.email}
-          onChange={onChange}
-          required
-          type="email"
-          variant={"outlined"}
-          margin='normal'
-          fullWidth
-        />
-        <TextField
-          label={"Senha"}
-          name={"password"}
-          value={form.password}
-          onChange={onChange}
-          type="password"
-          required
-          variant={'outlined'}
-          margin='normal'
-          fullWidth
-          
-        />
-        <Button
-          fullWidth
-          size='large'
-          type='submit'
-          variant={"contained"}
-        >
-          Entrar
-        </Button>
-      </form>
+        <form onSubmit={pegarDados}>
+          <TextField
+            label={'E-mail'}
+            name={"email"}
+            value={form.email}
+            onChange={onChange}
+            required
+            type="email"
+            variant={"outlined"}
+            margin='normal'
+            fullWidth
+          />
+          <TextField
+            label={"Senha"}
+            name={"password"}
+            value={form.password}
+            onChange={onChange}
+            type="password"
+            required
+            variant={'outlined'}
+            margin='normal'
+            fullWidth
+
+          />
+          <Button
+            fullWidth
+            size='large'
+            type='submit'
+            variant={"contained"}
+          >
+            Entrar
+          </Button>
+        </form>
       </Formulario>
       <Button onClick={() => irParaCadastro(history)}>Não possui cadastro? Clique aqui.</Button>
     </ContainerEntrar>

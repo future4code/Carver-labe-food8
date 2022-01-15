@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Container, ContainerPerfil, FooterPerfil, HistoricoVazio } from './estilo';
+import { Container, ContainerPerfil, FooterPerfil, HistoricoVazio, Pedidos } from './estilo';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { irParaCarrinho, irParaEditarEndereco, irParaEditarPerfil, irParaInicio, irParaPerfil } from '../../routes/cordinator';
@@ -10,6 +10,7 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import perfil from '../../recursos/imagens/perfilVerde.png'
 import homepage from '../../recursos/imagens/homePageCinza.png'
 import carrinho from '../../recursos/imagens/carrinhoCinza.png'
+import { Card, CardContent, Typography } from '@material-ui/core';
 
 
 const Perfil = () => {
@@ -20,11 +21,6 @@ const Perfil = () => {
   useEffect(() => {
     requests.pegarPerfil()
 
-  }, [
-    //requests
-  ])
-
-  const visualizarHistoricoPedidos = () => {
     axios.get(`${BASE_URL}/orders/history`, {
       headers: {
         auth: localStorage.getItem('token')
@@ -34,33 +30,35 @@ const Perfil = () => {
     }).catch((err) => {
       console.log(err.response)
     })
-  }
 
-  const arrayTeste = [1, 2, 3, 4]
-  const arrayTeste2 = []
-
-  console.log(arrayTeste2.length ? "sim" : "não", "teste")
-  console.log(arrayTeste.length ? "sim" : "não", "teste array com coisa")
+  }, [
+    //requests
+  ])
 
   const mapHistoricoPedidos = historicoPedidos.map((item) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const today = new Date(item.createdAt);
+
     return (
-      <div>
-        <p>
-          Loja
-        </p>
-        <p>
-          Data
-        </p>
-        <p>
-          Valor
-        </p>
-      </div>
+      <Pedidos key={item.createdAt}>
+        <Card variant='outlined'>
+          <CardContent>
+            <Typography className='restaurante'>
+              {item.restaurantName}
+            </Typography>
+            <Typography className='data'>
+              {today.toLocaleDateString("pt-BR", options)}
+            </Typography>
+            <Typography className='total'>
+              SUBTOTAL R${item.totalPrice}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Pedidos>
     )
   })
 
-  // console.log(historicoPedidos, "historico pedidos")
   return (
-
     <Container>
       <ContainerPerfil>
         <div className='header'>
@@ -96,13 +94,10 @@ const Perfil = () => {
 
           <div className='pedidos_card'>
             <div className='Card_Historico'>
-              {/* <button onClick={visualizarHistoricoPedidos}>
-              teste histórico
-            </button> */}
-              {historicoPedidos.length === 0 ?
+              {historicoPedidos && historicoPedidos.length === 0 ?
                 <HistoricoVazio>Você não realizou nenhum pedido</HistoricoVazio>
                 :
-                <div>array com coisa</div>}
+                <div>{mapHistoricoPedidos}</div>}
             </div>
           </div>
           <div className='Footer'>

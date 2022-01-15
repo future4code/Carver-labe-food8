@@ -37,11 +37,10 @@ export const Container = styled.div`
 
    .email{
       letter-spacing: -0.39px;
-      /* margin: 2px 0 0 0; */
+
    }
    .cpf{
       letter-spacing: -0.39px;
-      /* margin: 16px 0 0 0; */
    }
  }
 
@@ -72,7 +71,7 @@ export const Container = styled.div`
   .sublinhado{
     width: 360px;
     margin: -2px 0 7px;
-    border: solid 1px black;
+    border: solid 0.1vw black;
   }
  }
 
@@ -105,5 +104,51 @@ display: flex;
 justify-content: center;
 margin-top: 20px;
 
+`
+
+export const Pedidos = styled.div`
+
+display: flex;
+flex-direction: column;
+margin: 10px 0;
+font-family: 'Roboto', sans-serif;
+
+.data{
+  width: 296px;
+  height: 18px;
+  margin: 9px 0 7px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.29px
+}
+
+.total{
+  width: 296px;
+  height: 18px;
+  margin: 7px 0 0;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px;
+}
+
+.restaurante{
+  width: 296px;
+  height: 18px;
+  margin: 0 0 9px;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.39px;
+  color: #5cb646;
+
+}
 
 `

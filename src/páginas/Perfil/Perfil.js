@@ -28,7 +28,7 @@ const Perfil = () => {
     }).then((res) => {
       setHistoricoPedidos(res.data.orders)
     }).catch((err) => {
-      console.log(err.response)
+      alert(err.response.data.message)
     })
 
   }, [
@@ -110,11 +110,6 @@ const Perfil = () => {
         </FooterPerfil>
       </ContainerPerfil>
     </Container>
-
-
-
-
-
   )
 };
 

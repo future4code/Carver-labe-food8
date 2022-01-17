@@ -1,17 +1,22 @@
 import React, { useContext } from 'react';
 import { usePaginaProtegida } from '../../hooks/usePaginaProtegida';
 import CardRestaurantes from '../../componentes/CardRestaurantes/CardRestaurantes'
-import { ContainerPaginaInicial, ContainerHeader, ConteudoHeader, Navegacao } from './estilo';
+import { ContainerPaginaInicial, ContainerHeader, ConteudoHeader, Navegacao, FooterPaginaInicial } from './estilo';
 import { useHistory } from 'react-router-dom';
 import { irParaRestaurante } from '../../routes/cordinator';
 import { ContextoGlobal } from '../../EstadoGlobal/EstadoGlobalContexto';
 import { useState } from 'react';
 import Busca from '../../componentes/BuscaeFiltros/Busca';
+import { irParaCarrinho, irParaInicio, irParaPerfil } from '../../routes/cordinator';
+import perfil from '../../recursos/imagens/perfilVerde.png'
+import homepage from '../../recursos/imagens/homePageCinza.png'
+import carrinho from '../../recursos/imagens/carrinhoCinza.png'
 
 const PaginaInicial = () => {
   usePaginaProtegida()
-  const { states } = useContext(ContextoGlobal)
   const history = useHistory()
+  const { states } = useContext(ContextoGlobal)
+ 
   //criei um estado de filtro pra mudar a tela
   // e quando a gente clica no botão
   // ele muda esse estado com o nome da categoria do restaurante
@@ -61,7 +66,6 @@ const PaginaInicial = () => {
       <ContainerPaginaInicial>
         <ContainerHeader>
           <ConteudoHeader>
-            {/* uma tuia de botão que quando a gente clica ele muda o estado */}
             <div><p>FutureEats</p></div>
           </ConteudoHeader>
         </ContainerHeader>   <Busca /> <Navegacao>
@@ -108,6 +112,12 @@ const PaginaInicial = () => {
             </div>
         }
       </ContainerPaginaInicial>
+
+      <FooterPaginaInicial>
+          <button onClick={() => irParaInicio(history)}><img src={homepage} /></button>
+          <button onClick={() => irParaCarrinho(history)}><img src={carrinho} /></button>
+          <button onClick={() => irParaPerfil(history)}><img src={perfil} /></button>
+        </FooterPaginaInicial>
     </div>
   );
 }

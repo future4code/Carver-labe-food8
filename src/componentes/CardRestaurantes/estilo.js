@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerCardRestaurante = styled.div`
 width: 360px;
 height: 196px;
-margin: 50px 0 0;
+margin: 40px 0 0;
 padding: 8px 16px 0;
 border-radius: 8px;
 border: solid 1px #b8b8b8;

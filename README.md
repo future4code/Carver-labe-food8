@@ -25,7 +25,7 @@ Nome dos integrantes:
 
 <hr/>
 
-<h2>Você pode ver ele funcionando por aqui: labefood8-future-eats-22.surge.sh <h3>
+<h2>Você pode ver ele funcionando por aqui: [http://labefood8-future-eats-22.surge.sh] <h3>
 
 <hr/>
   

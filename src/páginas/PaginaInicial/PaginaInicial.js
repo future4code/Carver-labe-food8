@@ -61,7 +61,6 @@ const PaginaInicial = () => {
       <ContainerPaginaInicial>
         <ContainerHeader>
           <ConteudoHeader>
-            {/* uma tuia de botão que quando a gente clica ele muda o estado */}
             <div><p>FutureEats</p></div>
           </ConteudoHeader>
         </ContainerHeader>   <Busca /> <Navegacao>

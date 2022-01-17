@@ -29,7 +29,8 @@ p {
 text-decoration: bold;
 width: 74px;
 height: 19px;
-font-family: Roboto-Regular;
+font-family: 'Roboto', sans-serif;;
+align-items: center;
 font-size: 20px;
 font-weight: normal;
 font-stretch: normal;
@@ -38,6 +39,7 @@ line-height: normal;
 letter-spacing: -0.39px;
 text-align: center;
 color: var(--black);
+font-weight: bold;
 }
 `
 export const Navegacao = styled.nav`
@@ -47,6 +49,7 @@ margin: 8 5 5 5px;
 padding: 12px 0 12px 16px;
 display: flex;
 flex-direction: row;
+overflow: auto;
 
   
   
@@ -56,7 +59,7 @@ border: none;
 width: 87px;
 height: 18px;
 margin: 0 8px;
-font-family: Roboto;
+font-family: 'Roboto', sans-serif;;
 font-size: 16px;
 font-weight: normal;
 font-stretch: normal;
@@ -66,5 +69,12 @@ letter-spacing: -0.39px;
 text-align: center;
 color: var(--black);
 }
-  
+
+button:active {
+ color: #5cb646;
+}
+
+button:hover {
+ color: #5cb646;
+}
   `

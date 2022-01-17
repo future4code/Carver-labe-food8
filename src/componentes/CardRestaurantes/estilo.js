@@ -18,7 +18,7 @@ export const ContainerTextoNome = styled.div`
 width: 296px;
 height: 18px;
 margin: 12px 16px 4px;
-font-family: Roboto;
+font-family: 'Roboto', sans-serif;
 font-size: 18px;
 font-weight: normal;
 font-stretch: normal;
@@ -26,6 +26,7 @@ font-style: normal;
 line-height: normal;
 letter-spacing: -0.39px;
 color: #5cb646;
+font-weight: bold;
 `
 
 export const ContainerTextos = styled.div`
@@ -35,7 +36,7 @@ justify-content: space-between;
 width: 250px;
 height: 18px;
 margin: 4px 8px 0 18px;
-font-family: Roboto;
+font-family: 'Roboto', sans-serif;
 font-size: 16px;
 font-weight: normal;
 font-stretch: normal;
